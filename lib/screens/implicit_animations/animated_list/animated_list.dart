@@ -31,7 +31,7 @@ class _AnimatedListPageState extends State<AnimatedListPage> {
               padding: const EdgeInsets.all(8.0),
               child: Card(
                 child: ListTile(
-                  title: Text("$eachItem"),
+                  title: Text(" $eachItem"),
                   trailing: GestureDetector(
                       onTap: () {
                         setState(() {
@@ -39,7 +39,7 @@ class _AnimatedListPageState extends State<AnimatedListPage> {
                           _listKey.currentState?.removeItem(index,
                               duration: const Duration(seconds: 1),
                               (context, animation) {
-                            return Text("");
+                            return const Text("");
                           });
                         });
                       },

@@ -1,4 +1,5 @@
 import 'package:advanced_animation_course/components/button_widget.dart';
+import 'package:advanced_animation_course/screens/explicit_animations/positioned_transition.dart';
 import 'package:advanced_animation_course/screens/implicit_animations/animated_align/animated_align_page.dart';
 import 'package:advanced_animation_course/screens/implicit_animations/animated_container/animated_container.dart';
 import 'package:advanced_animation_course/screens/implicit_animations/animated_cross_fade/animated_cross_fade.dart';
@@ -7,11 +8,10 @@ import 'package:advanced_animation_course/screens/implicit_animations/animated_l
 import 'package:advanced_animation_course/screens/implicit_animations/animated_opacity/animated_opacity.dart';
 import 'package:advanced_animation_course/screens/implicit_animations/animated_padding/animated_padding.dart';
 import 'package:advanced_animation_course/screens/implicit_animations/animated_physical_model/animated_physical_model.dart';
+import 'package:advanced_animation_course/screens/implicit_animations/animated_positioned/animated_positioned.dart';
 import 'package:advanced_animation_course/screens/implicit_animations/animated_positioned_directional.dart/animated_positioned_directional.dart';
 import 'package:advanced_animation_course/screens/implicit_animations/animated_switcher/animated_switcher.dart';
 import 'package:flutter/material.dart';
-
-import '../implicit_animations/animated_positioned/animated_positioned.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
@@ -116,6 +116,14 @@ class HomePage extends StatelessWidget {
                 onTap: () {
                   Navigator.of(context).push(MaterialPageRoute(
                     builder: (context) => const AnimatedListPage(),
+                  ));
+                },
+              ),
+              ButtonWidget(
+                buttonName: "Positioned Transition",
+                onTap: () {
+                  Navigator.of(context).push(MaterialPageRoute(
+                    builder: (context) => const PositionedTransitionPage(),
                   ));
                 },
               ),
