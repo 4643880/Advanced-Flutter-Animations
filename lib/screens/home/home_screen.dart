@@ -3,6 +3,7 @@ import 'package:advanced_animation_course/screens/implicit_animations/animated_a
 import 'package:advanced_animation_course/screens/implicit_animations/animated_container/animated_container.dart';
 import 'package:advanced_animation_course/screens/implicit_animations/animated_cross_fade/animated_cross_fade.dart';
 import 'package:advanced_animation_course/screens/implicit_animations/animated_default_text_style/animated_default_text_style.dart';
+import 'package:advanced_animation_course/screens/implicit_animations/animated_list/animated_list.dart';
 import 'package:advanced_animation_course/screens/implicit_animations/animated_opacity/animated_opacity.dart';
 import 'package:advanced_animation_course/screens/implicit_animations/animated_padding/animated_padding.dart';
 import 'package:advanced_animation_course/screens/implicit_animations/animated_physical_model/animated_physical_model.dart';
@@ -107,6 +108,14 @@ class HomePage extends StatelessWidget {
                 onTap: () {
                   Navigator.of(context).push(MaterialPageRoute(
                     builder: (context) => const AnimatedSwitcherPage(),
+                  ));
+                },
+              ),
+              ButtonWidget(
+                buttonName: "Animated List",
+                onTap: () {
+                  Navigator.of(context).push(MaterialPageRoute(
+                    builder: (context) => const AnimatedListPage(),
                   ));
                 },
               ),
