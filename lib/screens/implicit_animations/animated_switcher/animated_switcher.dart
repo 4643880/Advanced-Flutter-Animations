@@ -8,6 +8,8 @@ class AnimatedSwitcherPage extends StatefulWidget {
 }
 
 class _AnimatedSwitcherPageState extends State<AnimatedSwitcherPage> {
+  bool flag = true;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -17,10 +19,51 @@ class _AnimatedSwitcherPageState extends State<AnimatedSwitcherPage> {
         ),
         centerTitle: true,
       ),
-      body: Center(
-        child: ElevatedButton(
-          onPressed: () {},
-          child: const Text("Login"),
+      body: AnimatedSwitcher(
+        switchInCurve: Curves.decelerate,
+        duration: const Duration(seconds: 3),
+        child: flag == true ? const LoginWidget() : const HomeDemo(),
+      ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {
+          setState(() {
+            flag = !flag;
+          });
+        },
+        child: const Icon(Icons.animation),
+      ),
+    );
+  }
+}
+
+class LoginWidget extends StatelessWidget {
+  const LoginWidget({
+    super.key,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Center(
+      child: GestureDetector(
+        key: const Key('2'),
+        onTap: () {},
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            const Text("Screen 1"),
+            const SizedBox(
+              height: 20,
+            ),
+            Container(
+              height: 200,
+              width: 200,
+              color: Colors.blueGrey,
+              child: Padding(
+                padding: const EdgeInsets.all(28.0),
+                child: Image.asset("assets/images/dog.png"),
+              ),
+            ),
+          ],
         ),
       ),
     );
@@ -43,40 +86,23 @@ class _HomeDemoState extends State<HomeDemo> {
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
+          const Text("Screen 2"),
+          const SizedBox(
+            height: 20,
+          ),
           GestureDetector(
-            onTap: () {
-              setState(() {
-                isFirstWidgetVisible = !isFirstWidgetVisible;
-              });
-            },
-            child: AnimatedCrossFade(
-              firstCurve: Curves.linear,
-              secondCurve: Curves.linear,
-              firstChild: Container(
-                height: 200,
-                width: 200,
-                color: Colors.orange,
-                child: Padding(
-                  padding: const EdgeInsets.all(28.0),
-                  child: Image.asset("assets/images/jerry.png"),
-                ),
+            key: const Key('2'),
+            onTap: () {},
+            child: Container(
+              height: 200,
+              width: 200,
+              color: Colors.orange,
+              child: Padding(
+                padding: const EdgeInsets.all(28.0),
+                child: Image.asset("assets/images/jerry.png"),
               ),
-              secondChild: Container(
-                height: 200,
-                width: 200,
-                color: Colors.orange,
-                child: Padding(
-                  padding: const EdgeInsets.all(28.0),
-                  child: Image.asset("assets/images/dog.png"),
-                ),
-              ),
-              crossFadeState: isFirstWidgetVisible
-                  ? CrossFadeState.showFirst
-                  : CrossFadeState.showSecond,
-              duration: const Duration(seconds: 1),
             ),
           ),
-          const Text("Click on the Picture"),
         ],
       ),
     );
