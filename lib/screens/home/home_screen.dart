@@ -19,10 +19,15 @@ import 'package:advanced_animation_course/screens/implicit_animations/animated_p
 import 'package:advanced_animation_course/screens/implicit_animations/animated_positioned/animated_positioned.dart';
 import 'package:advanced_animation_course/screens/implicit_animations/animated_positioned_directional.dart/animated_positioned_directional.dart';
 import 'package:advanced_animation_course/screens/implicit_animations/animated_switcher/animated_switcher.dart';
+import 'package:advanced_animation_course/screens/more_animations.dart/custom_painter_example.dart';
 import 'package:advanced_animation_course/screens/page_transitions/page_fade_transition/page_fade_transition.dart';
 import 'package:advanced_animation_course/screens/page_transitions/page_fade_transition/page_two.dart';
+import 'package:advanced_animation_course/screens/page_transitions/page_mix_fade_and_size_transition/page_mix_fade_and_size_transition.dart';
+import 'package:advanced_animation_course/screens/page_transitions/page_mix_scale_and_rotate_transition/page_mix_scale_and_rotate_transition.dart';
 import 'package:advanced_animation_course/screens/page_transitions/page_rotate_transition/page_rotate_transition.dart';
 import 'package:advanced_animation_course/screens/page_transitions/page_scale_transition/page_scale_transition.dart';
+import 'package:advanced_animation_course/screens/page_transitions/page_size_transition/page_size_transition.dart';
+import 'package:advanced_animation_course/screens/page_transitions/page_slide_transition/page_slide_transition.dart';
 import 'package:flutter/material.dart';
 
 class HomePage extends StatelessWidget {
@@ -256,6 +261,56 @@ class HomePage extends StatelessWidget {
                   Navigator.of(context).push(
                     PageRotateTransitionScreen(const PageTwo()),
                   );
+                },
+              ),
+              ButtonWidget(
+                buttonName: "Page Slide Transition",
+                onTap: () {
+                  Navigator.of(context).push(
+                    PageSlideTransitionScreen(const PageTwo()),
+                  );
+                },
+              ),
+              ButtonWidget(
+                buttonName: "Page Size Transition",
+                onTap: () {
+                  Navigator.of(context).push(
+                    PageSizeTransitionScreen(const PageTwo()),
+                  );
+                },
+              ),
+              ButtonWidget(
+                buttonName: "Page Mix Fade And Size Transition",
+                onTap: () {
+                  Navigator.of(context).push(
+                    PageMixFadeAndSizeTransitionScreen(const PageTwo()),
+                  );
+                },
+              ),
+              ButtonWidget(
+                buttonName: "Page Mix Scale And Rotate Transition",
+                onTap: () {
+                  Navigator.of(context).push(
+                    PageMixScaleAndRotateTransitionScreen(const PageTwo()),
+                  );
+                },
+              ),
+              const Divider(color: Colors.purple, thickness: 3),
+              const Center(
+                  child: Text(
+                "More Animations Starts Here",
+                style: TextStyle(
+                  color: Colors.black,
+                  fontWeight: FontWeight.w600,
+                ),
+              )),
+              const Divider(color: Colors.purple, thickness: 3),
+              ButtonWidget(
+                buttonName: "Custom Painter Animations",
+                onTap: () {
+                  Navigator.of(context).push(MaterialPageRoute(
+                    builder: (context) => const CustomPainterExample(),
+                  ));
                 },
               ),
             ],
