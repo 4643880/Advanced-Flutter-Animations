@@ -1,10 +1,13 @@
 import 'package:advanced_animation_course/components/button_widget.dart';
 import 'package:advanced_animation_course/screens/explicit_animations/animated_builder/animated_builder.dart';
+import 'package:advanced_animation_course/screens/explicit_animations/default_text_style/default_text_style.dart';
 import 'package:advanced_animation_course/screens/explicit_animations/fade_transition/fade_transition.dart';
+import 'package:advanced_animation_course/screens/explicit_animations/indexed_stack_transition/indexed_stack_transition.dart';
 import 'package:advanced_animation_course/screens/explicit_animations/positioned_directional_transition/positioned_directional_transition.dart';
 import 'package:advanced_animation_course/screens/explicit_animations/positioned_transition/positioned_transition.dart';
 import 'package:advanced_animation_course/screens/explicit_animations/rotation_transition/rotation_transition.dart';
 import 'package:advanced_animation_course/screens/explicit_animations/size_transition/size_transition.dart';
+import 'package:advanced_animation_course/screens/explicit_animations/tween_animation_builder/tween_animation_builder.dart';
 import 'package:advanced_animation_course/screens/implicit_animations/animated_align/animated_align_page.dart';
 import 'package:advanced_animation_course/screens/implicit_animations/animated_container/animated_container.dart';
 import 'package:advanced_animation_course/screens/implicit_animations/animated_cross_fade/animated_cross_fade.dart';
@@ -190,6 +193,30 @@ class HomePage extends StatelessWidget {
                   Navigator.of(context).push(MaterialPageRoute(
                     builder: (context) =>
                         const PositionedDirectionalTransitionpage(),
+                  ));
+                },
+              ),
+              ButtonWidget(
+                buttonName: "Tween Animation Builder",
+                onTap: () {
+                  Navigator.of(context).push(MaterialPageRoute(
+                    builder: (context) => const TweenAnimationBuilderPage(),
+                  ));
+                },
+              ),
+              ButtonWidget(
+                buttonName: "Default Text Style",
+                onTap: () {
+                  Navigator.of(context).push(MaterialPageRoute(
+                    builder: (context) => const DefaultTextStylePage(),
+                  ));
+                },
+              ),
+              ButtonWidget(
+                buttonName: "Indexed Stack Transition",
+                onTap: () {
+                  Navigator.of(context).push(MaterialPageRoute(
+                    builder: (context) => const IndexedStackTransitionPage(),
                   ));
                 },
               ),
