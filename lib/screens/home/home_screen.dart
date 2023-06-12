@@ -1,5 +1,7 @@
 import 'package:advanced_animation_course/components/button_widget.dart';
 import 'package:advanced_animation_course/screens/explicit_animations/animated_builder/animated_builder.dart';
+import 'package:advanced_animation_course/screens/explicit_animations/fade_transition/fade_transition.dart';
+import 'package:advanced_animation_course/screens/explicit_animations/positioned_directional_transition/positioned_directional_transition.dart';
 import 'package:advanced_animation_course/screens/explicit_animations/positioned_transition/positioned_transition.dart';
 import 'package:advanced_animation_course/screens/explicit_animations/rotation_transition/rotation_transition.dart';
 import 'package:advanced_animation_course/screens/explicit_animations/size_transition/size_transition.dart';
@@ -171,6 +173,23 @@ class HomePage extends StatelessWidget {
                 onTap: () {
                   Navigator.of(context).push(MaterialPageRoute(
                     builder: (context) => const AnimatedBuilderPage(),
+                  ));
+                },
+              ),
+              ButtonWidget(
+                buttonName: "Fade Transition",
+                onTap: () {
+                  Navigator.of(context).push(MaterialPageRoute(
+                    builder: (context) => const FadeTransitionPage(),
+                  ));
+                },
+              ),
+              ButtonWidget(
+                buttonName: "Positioned Directional Transition",
+                onTap: () {
+                  Navigator.of(context).push(MaterialPageRoute(
+                    builder: (context) =>
+                        const PositionedDirectionalTransitionpage(),
                   ));
                 },
               ),
