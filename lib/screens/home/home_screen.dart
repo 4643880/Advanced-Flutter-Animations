@@ -20,6 +20,7 @@ import 'package:advanced_animation_course/screens/implicit_animations/animated_p
 import 'package:advanced_animation_course/screens/implicit_animations/animated_positioned_directional.dart/animated_positioned_directional.dart';
 import 'package:advanced_animation_course/screens/implicit_animations/animated_switcher/animated_switcher.dart';
 import 'package:advanced_animation_course/screens/more_animations.dart/custom_painter_example.dart';
+import 'package:advanced_animation_course/screens/more_animations.dart/lottie_animations.dart';
 import 'package:advanced_animation_course/screens/page_transitions/page_fade_transition/page_fade_transition.dart';
 import 'package:advanced_animation_course/screens/page_transitions/page_fade_transition/page_two.dart';
 import 'package:advanced_animation_course/screens/page_transitions/page_mix_fade_and_size_transition/page_mix_fade_and_size_transition.dart';
@@ -310,6 +311,14 @@ class HomePage extends StatelessWidget {
                 onTap: () {
                   Navigator.of(context).push(MaterialPageRoute(
                     builder: (context) => const CustomPainterExample(),
+                  ));
+                },
+              ),
+              ButtonWidget(
+                buttonName: "Lottie Animations",
+                onTap: () {
+                  Navigator.of(context).push(MaterialPageRoute(
+                    builder: (context) => const LottieAnimationExample(),
                   ));
                 },
               ),
