@@ -38,6 +38,12 @@ class _PositionedTransitionPageState extends State<PositionedTransitionPage>
   }
 
   @override
+  void dispose() {
+    animationController.dispose();
+    super.dispose();
+  }
+
+  @override
   Widget build(BuildContext context) {
     // animationController.forward();
     return Scaffold(

@@ -1,5 +1,8 @@
 import 'package:advanced_animation_course/components/button_widget.dart';
-import 'package:advanced_animation_course/screens/explicit_animations/positioned_transition.dart';
+import 'package:advanced_animation_course/screens/explicit_animations/animated_builder/animated_builder.dart';
+import 'package:advanced_animation_course/screens/explicit_animations/positioned_transition/positioned_transition.dart';
+import 'package:advanced_animation_course/screens/explicit_animations/rotation_transition/rotation_transition.dart';
+import 'package:advanced_animation_course/screens/explicit_animations/size_transition/size_transition.dart';
 import 'package:advanced_animation_course/screens/implicit_animations/animated_align/animated_align_page.dart';
 import 'package:advanced_animation_course/screens/implicit_animations/animated_container/animated_container.dart';
 import 'package:advanced_animation_course/screens/implicit_animations/animated_cross_fade/animated_cross_fade.dart';
@@ -30,6 +33,16 @@ class HomePage extends StatelessWidget {
               parent: BouncingScrollPhysics(),
             ),
             children: [
+              const Divider(color: Colors.purple, thickness: 3),
+              const Center(
+                  child: Text(
+                "Implicit Animations Starts Here",
+                style: TextStyle(
+                  color: Colors.black,
+                  fontWeight: FontWeight.w600,
+                ),
+              )),
+              const Divider(color: Colors.purple, thickness: 3),
               ButtonWidget(
                 buttonName: "Animated Align",
                 onTap: () {
@@ -119,11 +132,45 @@ class HomePage extends StatelessWidget {
                   ));
                 },
               ),
+              const Divider(color: Colors.purple, thickness: 3),
+              const Center(
+                  child: Text(
+                "Explicit Animations Starts Here",
+                style: TextStyle(
+                  color: Colors.black,
+                  fontWeight: FontWeight.w600,
+                ),
+              )),
+              const Divider(color: Colors.purple, thickness: 3),
               ButtonWidget(
                 buttonName: "Positioned Transition",
                 onTap: () {
                   Navigator.of(context).push(MaterialPageRoute(
                     builder: (context) => const PositionedTransitionPage(),
+                  ));
+                },
+              ),
+              ButtonWidget(
+                buttonName: "Size Transition",
+                onTap: () {
+                  Navigator.of(context).push(MaterialPageRoute(
+                    builder: (context) => const SizeTransitionPage(),
+                  ));
+                },
+              ),
+              ButtonWidget(
+                buttonName: "Rotation Transition",
+                onTap: () {
+                  Navigator.of(context).push(MaterialPageRoute(
+                    builder: (context) => const RotationTransitionPage(),
+                  ));
+                },
+              ),
+              ButtonWidget(
+                buttonName: "Animated Builder",
+                onTap: () {
+                  Navigator.of(context).push(MaterialPageRoute(
+                    builder: (context) => const AnimatedBuilderPage(),
                   ));
                 },
               ),
