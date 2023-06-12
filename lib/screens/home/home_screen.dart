@@ -19,6 +19,10 @@ import 'package:advanced_animation_course/screens/implicit_animations/animated_p
 import 'package:advanced_animation_course/screens/implicit_animations/animated_positioned/animated_positioned.dart';
 import 'package:advanced_animation_course/screens/implicit_animations/animated_positioned_directional.dart/animated_positioned_directional.dart';
 import 'package:advanced_animation_course/screens/implicit_animations/animated_switcher/animated_switcher.dart';
+import 'package:advanced_animation_course/screens/page_transitions/page_fade_transition/page_fade_transition.dart';
+import 'package:advanced_animation_course/screens/page_transitions/page_fade_transition/page_two.dart';
+import 'package:advanced_animation_course/screens/page_transitions/page_rotate_transition/page_rotate_transition.dart';
+import 'package:advanced_animation_course/screens/page_transitions/page_scale_transition/page_scale_transition.dart';
 import 'package:flutter/material.dart';
 
 class HomePage extends StatelessWidget {
@@ -218,6 +222,40 @@ class HomePage extends StatelessWidget {
                   Navigator.of(context).push(MaterialPageRoute(
                     builder: (context) => const IndexedStackTransitionPage(),
                   ));
+                },
+              ),
+              const Divider(color: Colors.purple, thickness: 3),
+              const Center(
+                  child: Text(
+                "Page Transition Animations Starts Here",
+                style: TextStyle(
+                  color: Colors.black,
+                  fontWeight: FontWeight.w600,
+                ),
+              )),
+              const Divider(color: Colors.purple, thickness: 3),
+              ButtonWidget(
+                buttonName: "Page Fade Transition",
+                onTap: () {
+                  Navigator.of(context).push(
+                    PageFadeTransition(const PageTwo()),
+                  );
+                },
+              ),
+              ButtonWidget(
+                buttonName: "Page Scale Transition",
+                onTap: () {
+                  Navigator.of(context).push(
+                    PageScaleTransitionScreen(const PageTwo()),
+                  );
+                },
+              ),
+              ButtonWidget(
+                buttonName: "Page Rotate Transition",
+                onTap: () {
+                  Navigator.of(context).push(
+                    PageRotateTransitionScreen(const PageTwo()),
+                  );
                 },
               ),
             ],
