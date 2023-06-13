@@ -29,6 +29,7 @@ import 'package:advanced_animation_course/screens/page_transitions/page_rotate_t
 import 'package:advanced_animation_course/screens/page_transitions/page_scale_transition/page_scale_transition.dart';
 import 'package:advanced_animation_course/screens/page_transitions/page_size_transition/page_size_transition.dart';
 import 'package:advanced_animation_course/screens/page_transitions/page_slide_transition/page_slide_transition.dart';
+import 'package:advanced_animation_course/screens/trip_app/trip_screens/home.dart';
 import 'package:flutter/material.dart';
 
 class HomePage extends StatelessWidget {
@@ -322,6 +323,22 @@ class HomePage extends StatelessWidget {
                   ));
                 },
               ),
+              ButtonWidget(
+                buttonName: "Trip Animated App",
+                onTap: () {
+                  Navigator.of(context).push(MaterialPageRoute(
+                    builder: (context) => HomeTrip(),
+                  ));
+                },
+              ),
+              // ButtonWidget(
+              //   buttonName: "Rive Animations",
+              //   onTap: () {
+              //     Navigator.of(context).push(MaterialPageRoute(
+              //       builder: (context) => const RiveAnimationExample(),
+              //     ));
+              //   },
+              // ),
             ],
           ),
         ),
