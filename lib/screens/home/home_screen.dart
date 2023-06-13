@@ -1,4 +1,5 @@
 import 'package:advanced_animation_course/components/button_widget.dart';
+import 'package:advanced_animation_course/screens/basic_animations_concepts/basic_screens/basic_home.dart';
 import 'package:advanced_animation_course/screens/explicit_animations/animated_builder/animated_builder.dart';
 import 'package:advanced_animation_course/screens/explicit_animations/default_text_style/default_text_style.dart';
 import 'package:advanced_animation_course/screens/explicit_animations/fade_transition/fade_transition.dart';
@@ -331,14 +332,14 @@ class HomePage extends StatelessWidget {
                   ));
                 },
               ),
-              // ButtonWidget(
-              //   buttonName: "Rive Animations",
-              //   onTap: () {
-              //     Navigator.of(context).push(MaterialPageRoute(
-              //       builder: (context) => const RiveAnimationExample(),
-              //     ));
-              //   },
-              // ),
+              ButtonWidget(
+                buttonName: "Basic Animation Concepts",
+                onTap: () {
+                  Navigator.of(context).push(MaterialPageRoute(
+                    builder: (context) => const BasicHomeScreen(),
+                  ));
+                },
+              ),
             ],
           ),
         ),
