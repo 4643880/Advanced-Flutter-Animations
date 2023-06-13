@@ -9,6 +9,7 @@ import 'package:advanced_animation_course/screens/explicit_animations/positioned
 import 'package:advanced_animation_course/screens/explicit_animations/rotation_transition/rotation_transition.dart';
 import 'package:advanced_animation_course/screens/explicit_animations/size_transition/size_transition.dart';
 import 'package:advanced_animation_course/screens/explicit_animations/tween_animation_builder/tween_animation_builder.dart';
+import 'package:advanced_animation_course/screens/flutter_complex_animations/animated_builder_and_transform.dart';
 import 'package:advanced_animation_course/screens/implicit_animations/animated_align/animated_align_page.dart';
 import 'package:advanced_animation_course/screens/implicit_animations/animated_container/animated_container.dart';
 import 'package:advanced_animation_course/screens/implicit_animations/animated_cross_fade/animated_cross_fade.dart';
@@ -337,6 +338,25 @@ class HomePage extends StatelessWidget {
                 onTap: () {
                   Navigator.of(context).push(MaterialPageRoute(
                     builder: (context) => const BasicHomeScreen(),
+                  ));
+                },
+              ),
+              const Divider(color: Colors.purple, thickness: 3),
+              const Center(
+                  child: Text(
+                "Some More Complex Animations",
+                style: TextStyle(
+                  color: Colors.black,
+                  fontWeight: FontWeight.w600,
+                ),
+              )),
+              const Divider(color: Colors.purple, thickness: 3),
+              ButtonWidget(
+                buttonName: "Animated Builder & Transform",
+                onTap: () {
+                  Navigator.of(context).push(MaterialPageRoute(
+                    builder: (context) =>
+                        const AnimatedBuilderAndTransformPage(),
                   ));
                 },
               ),
